@@ -51,7 +51,6 @@ let passwordTextField: CustomTextField = {
 
 let emailTextField: CustomTextField = {
     let textField = CustomTextField()
-    textField.textColor = .red
     textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
     textField.textColor = .white
     textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
@@ -133,12 +132,7 @@ class SignupScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
-      
+    
         view.backgroundColor = Colors.mainBgColor
         
         let guide = view.safeAreaLayoutGuide
@@ -200,7 +194,7 @@ class SignupScreen: UIViewController {
         moreInfoText.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 50).isActive = true
         moreInfoText.leadingAnchor.constraint(equalTo: signUpButton.leadingAnchor).isActive = true
         
-        copyRightText.topAnchor.constraint(equalTo: moreInfoText.bottomAnchor, constant: 110).isActive = true
+        copyRightText.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
         copyRightText.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
    
