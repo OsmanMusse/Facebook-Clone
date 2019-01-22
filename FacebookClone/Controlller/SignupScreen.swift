@@ -8,107 +8,117 @@
 
 import UIKit
 
-  let facebookLogo: UIImageView = {
-    let image = UIImageView(image: #imageLiteral(resourceName: "Facebook-logo"))
-    image.translatesAutoresizingMaskIntoConstraints = false
-    return image
- }()
-
- let welcomeText: UILabel = {
-    let label = UILabel()
-    label.text = "Create New Account"
-    label.font = UIFont(name: "Helvetica-Bold", size: 21)
-    label.textColor = .white
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
- }()
-
- let nameTextField: CustomTextField = {
-    let textField = CustomTextField()
-    textField.textColor = .white
-    textField.attributedPlaceholder = NSAttributedString(string: "Imie", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
-    textField.textColor = .white
-    textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
-    textField.layer.cornerRadius = 23
-    textField.layer.masksToBounds = true
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    return textField
- }()
 
 
-let passwordTextField: CustomTextField = {
-    let textField = CustomTextField()
-    textField.textColor = .white
-    textField.attributedPlaceholder = NSAttributedString(string: "Nazwisko", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
-    textField.textColor = .red
-    textField.isSecureTextEntry = true
-    textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
-    textField.layer.cornerRadius = 23
-    textField.layer.masksToBounds = true
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    return textField
-}()
-
-let emailTextField: CustomTextField = {
-    let textField = CustomTextField()
-    textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
-    textField.textColor = .white
-    textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
-    textField.layer.cornerRadius = 23
-    textField.layer.masksToBounds = true
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    return textField
-}()
-
-
-let signOutButton: UIButton = {
-    let button = UIButton(type: .system)
-    button.setImage(#imageLiteral(resourceName: "Signup").withRenderingMode(.alwaysOriginal), for: .normal)
-    button.setTitle("Mezczyzna", for: .normal)
-    button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 15.5)
-    button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-    button.tintColor = UIColor(r: 147, g: 165, b: 199, a: 100)
-    button.widthAnchor.constraint(equalToConstant: 120).isActive = true
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-}()
-
-let signUpButton: UIButton = {
-   let button = UIButton(type: .system)
-    button.setTitle("Nastepny Krok", for: .normal)
-    button.setTitleColor(Colors.mainBgColor, for: .normal)
-    button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 16)
-    button.layer.cornerRadius = 25
-    button.layer.masksToBounds = true
-    button.backgroundColor = UIColor(r: 249, g: 249, b: 249, a: 100)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-}()
-
-let moreInfoText: UILabel = {
-   let label = UILabel()
-    label.text = "Kilkajcq prycpick Nasatropny krck akcplujorn norz rgulamin"
-    label.font = UIFont(name: "Helvetica-Bold", size: 12)
-    label.textColor = UIColor(r: 147, g: 165, b: 199, a: 100)
-    label.widthAnchor.constraint(equalToConstant: 341.5).isActive = true
-    label.numberOfLines = 2
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-}()
-
-
-let copyRightText: UILabel = {
-   let label = UILabel()
-    let attributedText = NSMutableAttributedString(string: "Copyright 2019 by Facebook", attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTransparent, NSAttributedString.Key.font: UIFont(name: "Roboto-Medium", size: 12)])
-    attributedText.append(NSAttributedString(string: "  Facebook", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Roboto-Medium", size: 12)]))
-    label.attributedText = attributedText
-    label.translatesAutoresizingMaskIntoConstraints = false
-    return label
-}()
 
 
 
 class SignupScreen: UIViewController {
+    
+    
+    let facebookLogo: UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "Facebook-logo"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    let welcomeText: UILabel = {
+        let label = UILabel()
+        label.text = "Create New Account"
+        label.font = UIFont(name: "Helvetica-Bold", size: 21)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let nameTextField: CustomTextField = {
+        let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        let textField = CustomTextField(padding: padding)
+        textField.textColor = .white
+        textField.attributedPlaceholder = NSAttributedString(string: "Imie", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
+        textField.textColor = .white
+        textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
+        textField.layer.cornerRadius = 23
+        textField.layer.masksToBounds = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    
+    let passwordTextField: CustomTextField = {
+        let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        let textField = CustomTextField(padding: padding)
+        textField.textColor = .white
+        textField.attributedPlaceholder = NSAttributedString(string: "Nazwisko", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
+        textField.textColor = .red
+        textField.isSecureTextEntry = true
+        textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
+        textField.layer.cornerRadius = 23
+        textField.layer.masksToBounds = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let emailTextField: CustomTextField = {
+        let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        let textField = CustomTextField(padding: padding)
+        textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, .font: UIFont(name: "Helvetica-Bold", size: 19)])
+        
+        textField.textColor = .white
+        textField.backgroundColor = UIColor(r: 51, g: 85, b: 150, a: 100)
+        textField.layer.cornerRadius = 23
+        textField.layer.masksToBounds = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    
+    let signOutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Signup").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setTitle("Mezczyzna", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 15.5)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        button.tintColor = UIColor(r: 147, g: 165, b: 199, a: 100)
+        button.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Nastepny Krok", for: .normal)
+        button.setTitleColor(Colors.mainBgColor, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 16)
+        button.layer.cornerRadius = 25
+        button.layer.masksToBounds = true
+        button.backgroundColor = UIColor(r: 249, g: 249, b: 249, a: 100)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let moreInfoText: UILabel = {
+        let label = UILabel()
+        label.text = "Kilkajcq prycpick Nasatropny krck akcplujorn norz rgulamin"
+        label.font = UIFont(name: "Helvetica-Bold", size: 12)
+        label.textColor = UIColor(r: 147, g: 165, b: 199, a: 100)
+        label.widthAnchor.constraint(equalToConstant: 341.5).isActive = true
+        label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    let copyRightText: UILabel = {
+        let label = UILabel()
+        let attributedText = NSMutableAttributedString(string: "Copyright 2019 by Facebook", attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTransparent, NSAttributedString.Key.font: UIFont(name: "Roboto-Medium", size: 12)])
+        attributedText.append(NSAttributedString(string: "  Facebook", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Roboto-Medium", size: 12)]))
+        label.attributedText = attributedText
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+
     
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
